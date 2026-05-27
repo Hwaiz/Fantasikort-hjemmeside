@@ -99,7 +99,7 @@
     .hero {
       width: 100%;
       aspect-ratio: 2.39 / 1;
-      background: url("assets/IMG_2027.jpeg") center/cover no-repeat;
+      background: url("assets/IMG_2013.jpeg") center/cover no-repeat;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -341,6 +341,57 @@
       display: block;
     }
 
+    /* start of goffy town */
+
+    .mobile-gallery {
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      box-shadow: 0 8px 32px var(--shadow);
+    }
+
+    .mobile-gallery .main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mobile-product-thumbs {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      display: flex;
+      gap: 8px;
+      background: rgba(255,255,255,0.85);
+      padding: 6px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .mobile-product-thumbs img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.12s, border-color 0.12s;
+      display: block;
+    }
+
+    .mobile-product-thumbs img:hover { transform: translateY(-3px); }
+    .mobile-product-thumbs img.active { border-color: var(--ligthComplement); transform: translateY(-3px); }
+
+    .mobile-gallery svg { width: 55%; height: 55%; }
+
+    /* end of goofy town */
+
     .product-thumbs {
       position: absolute;
       left: 12px;
@@ -376,6 +427,14 @@
       line-height: 1.2;
     }
 
+    .product-full-info h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.2rem;
+      color: var(--Darkblue);
+      line-height: 2;
+      padding: 0.8rem 0 0;
+    }
+
     .product-full-info .product-tag { margin-top: 0.5rem; }
 
     .product-price {
@@ -389,10 +448,11 @@
       color: #4a5a78;
       line-height: 1.7;
       font-size: 1.02rem;
+      margin-bottom: 0.6rem;
     }
 
     .product-features {
-      margin-top: 1.4rem;
+      margin-top: 0.4rem;
       list-style: none;
       display: flex;
       flex-direction: column;
@@ -499,6 +559,21 @@
     .contact-value { font-size: 1rem; font-weight: 700; color: var(--Darkblue); }
 
     @media (max-width: 700px) {
+      .nav-logo {
+        font-size: 1.5rem;
+      }
+
+      .nav-buttons {
+        gap: 0.4rem;
+      }
+      
+      .nav-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 630px) {
       nav {
         height: auto;
         flex-direction: column;
@@ -529,6 +604,25 @@
       .product-card { aspect-ratio: auto; flex-direction: column; }
       .product-img { flex: 0 0 auto; width: 100%; aspect-ratio: 2/1; }
       .product-full { grid-template-columns: 1fr; }
+
+      /* Make hero text and product headings a bit smaller on phone screens */
+      .hero-content h1 { font-size: clamp(1.4rem, 7vw, 2.2rem); }
+      .hero-content p { font-size: 0.95rem; }
+      .hero-cta { font-size: 0.95rem; padding: 0.6rem 1.4rem; }
+
+      .products-section h2 { font-size: 1.6rem; margin-bottom: 0.2rem; }
+      .products-grid { gap: 1rem; }
+
+      /* Hide the desktop left-side gallery on small screens, show inline mobile gallery */
+      .product-full-img { display: none; }
+      .mobile-gallery { display: block; margin-top: 0.8rem; margin-bottom: 1rem;}
+
+      .product-full-info h1 { font-size: 1.6rem; }
+      .product-price { font-size: 1.6rem; margin: 0.5rem 0rem;}
+
+      .product-page-inner { margin: 1rem auto;}
+
+      .hero { aspect-ratio: 5/3; }
     }
 
     /*===============================
@@ -592,7 +686,7 @@
           <div class="product-info">
             <!-- <div class="product-tag">⭐ Best Seller</div> -->
             <h3>Fantasikort</h3>
-            <p>Et innovativt kortspil der samler leg og fantasitræning. Perfekt for aldrene 7 til 9 år.</p>
+            <p>Fantasikort er et kreativt kortspil til børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg. Med 44 fantasifulde kort skaber børnene en ny historie og leg hver gang de spiller. Spillet er udviklet til at stimulere børns kreativitet og gøre læring gennem leg både underholdende og udviklende.</p>
             <span class="product-arrow">Se produkt</span>
           </div>
         </div>
@@ -626,26 +720,72 @@
             <img class="thumb active" src="assets/IMG_2019.jpeg" data-src="assets/IMG_2019.jpeg" alt="Forside">
             <img class="thumb" src="assets/IMG_2018.jpeg" data-src="assets/IMG_2018.jpeg" alt="Kort træk">
             <img class="thumb" src="assets/IMG_2011.jpeg" data-src="assets/IMG_2011.jpeg" alt="Kort spil">
-            <img class="thumb" src="assets/IMG_2013.jpeg" data-src="assets/IMG_2013.jpeg" alt="På græs">
+            <img class="thumb" src="assets/IMG_2027.jpeg" data-src="assets/IMG_2027.jpeg" alt="På græs">
           </div>
         </div>
 
         <div class="product-full-info">
           <h1>Fantasikort</h1>
           <!-- <div class="product-tag">⭐ Best Seller · Ages 3+</div> -->
-          <div class="product-price">1000 kr</div>
+          <div class="product-price">899 kr</div>
+
+          <div class="mobile-gallery" aria-hidden="true">
+            <img id="mobileMainImg" class="main-img" src="assets/IMG_2019.jpeg" alt="Fantasikort">
+            <div class="mobile-product-thumbs" aria-hidden="false">
+              <img class="thumb active" src="assets/IMG_2019.jpeg" data-src="assets/IMG_2019.jpeg" alt="Forside">
+              <img class="thumb" src="assets/IMG_2018.jpeg" data-src="assets/IMG_2018.jpeg" alt="Kort træk">
+              <img class="thumb" src="assets/IMG_2011.jpeg" data-src="assets/IMG_2011.jpeg" alt="Kort spil">
+              <img class="thumb" src="assets/IMG_2027.jpeg" data-src="assets/IMG_2027.jpeg" alt="På græs">
+            </div>
+          </div>
           <p>
-            Fantasikort er et kortspil der stimulere børns fantasi gennem leg. Hvert barn trækker nogle kort, der bestemmer deres karakter og en genstand de har. tilsammen i gruppen trækkes et sted- og problemkort, der hver især bestemmer stedet legen udfolder sig i, og hvilket problem børnene skal løse. Disse få simple regler tilrettelægger en leg, hvor børnenes fantasi bliver udfordret og derfor trænet.
+            Fantasikort er et kreativt kortspil til børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg. Med 44 fantasifulde kort skaber børnene en ny historie og leg hver gang de spiller. Spillet er udviklet til at stimulere børns kreativitet og gøre læring gennem leg både underholdende og udviklende.
           </p>
           <p>
-            Kortene er laserskæret af MDA og efterfølgende efterbehandlet, for at give en god tekstur og lang holdbarhed.
+            Fantasikort passer perfekt til både indendørs og udendørs leg og kan bruges af børn, familier, institutioner og skoler.
           </p>
+          <h3>Sådan spiller man Fantasikort</h3>
+          <p>
+            Hvert barn, som er med i spillet, trækker et personkort og et tingkort. herefter trækker hele gruppen sammen et stedkort og et problemkort. 
+          </p>
+          <p>
+            Personkortene fortæller, hvem børnene er i legen. Tingkortene bestemmer, hvilke genstande de har med sig. Stedkortet og problemkortet bestemmer stedet legen udfolder sig i, og problemet børnene skal løse.
+          </p>
+          <p>
+            Det kan være, at en astrunaut med en pind, en baby med et flyvende tæppe og en pirat met et æble, skal stoppe en meteor for at ramme jorden i en orken.
+          </p>
+          <p>
+            Efter kortene er blevet trukket, så startes legen! Når problemet er løst, eller børnene ønsker et nyt eventyr, så trækkes nye kort.
+          </p>
+          <h3>
+            Vi lover:
+          </h3>
+          <h4>Kreativ leg med fokus på fantasi</h4>
+          <p>
+            Fantasikort hjælper børn med at udvikle kreativ tænkning, fantasi og sociale kompetencer gennem rolleleg og samarbejde.
+          </p>
+          <h4>Høj kvalitet og lang holdbarhed</h4>
+          <p>
+            Kortene er produceret i slidstærke materialer, der er udviklet til mange timers leg både inde og ude. Fantasikort er vandafvisende og kan tåle aktiv brug.
+          </p>
+          <h4>Sikkert legetøj til børn</h4>
+          <p>
+            Hele sættet er fremstillet af genanvendte træfibre og lever op til gældende EU-standarder og danske sikkerhedskrav.
+          </p>
+          <h4>Uendelige kombinationer og historier</h4>
+          <p>
+            De 44 spillekort kan kombineres på millioner af måder, hvilket giver børnene nye eventyr og udfordringer hver eneste gang.
+          </p>
+          <h4>Bæredygtigt produceret</h4>
+          <p>
+            Fantasikort er lavet af genanvendte træfibre og produceret uden plastik i både kort eller emballage.
+          </p>
+          <h3>Diverse information</h3>
           <ul class="product-features">
             <li>44 kort + 1 regelkort</li>
             <li>3 til 8 spillere</li>
-            <li>Designet til flere års udendørs brug</li>
-            <li>Speciellavet i Danmark til hver ordre</li>
-            <li>Flere milliader kombinationer</li>
+            <li>Kasse: 17,5 x 8,6 x 12 cm</li>
+            <li>Kort: 11 x 7 x 0,3 cm</li>
           </ul>
           <!--  <button class="add-cart-btn">Køb</button>  -->
           <br></br>
@@ -747,7 +887,14 @@
         if (main) main.src = src;
         document.querySelectorAll('.product-thumbs img').forEach(i => i.classList.remove('active'));
         clicked.classList.add('active');
-      }
+      } else if (e.target && e.target.matches('.mobile-product-thumbs img')) {
+        const clicked = e.target;
+        const src = clicked.getAttribute('data-src') || clicked.src;
+        const main = document.getElementById('mobileMainImg');
+        if (main) main.src = src;
+        document.querySelectorAll('.mobile-product-thumbs img').forEach(i => i.classList.remove('active'));
+        clicked.classList.add('active');
+      } 
     });
   </script>
 </body>
