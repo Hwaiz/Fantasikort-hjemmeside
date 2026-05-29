@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <title>Fantasikort af Fri Fantasi</title>
+    <meta name="description" content="Fantasikort - Et kreativt kortspil til børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg.">
+    <meta name="keywords" content="Fantasikort, Fri Fantasi, udviklende legetøj, Fantasileg, Spil til børn">
+    
+    <meta property="og:title" content="Fantasikort">
+    <meta property="og:description" content="Et kreativt kortspil til børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.fri-fantasi.dk/produkter/Fantasikort">
+    <meta property="og:image" content="https://www.fri-fantasi.dk/produkter/Fantasikort/assets/Fantasikort-main.jpg">
+    
+    <link rel="canonical" href="https://www.fri-fantasi.dk/produkter/Fantasikort">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --sun: #eb9b9b;
+            --sky: #74C0FC;
+            --coral: #FF6B6B;
+            --mint: #FFD43B;
+            --shadow: rgba(26,44,82,0.12);
+
+            --ligthBlue: #a1b7f0;
+            --middleBlue: #8da6e7;
+            --Darkblue: #2c4583;
+            --ligthComplement: #FFD43B;
+
+            --topBar: #a1b7f0;
+            --background: #fffff0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--background);
+            color: var(--Darkblue);
+            min-height: 100vh;
+        }
+
+        /* ── NAV ── */
+        nav {
+            background: var(--topBar);
+            padding: 0 2rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+        }
+
+        .nav-logo {
+            position: absolute;
+            left: 2rem;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            color: var(--Darkblue);
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-btn {
+            background: none;
+            border: 2px solid transparent;
+            color: var(--Darkblue);
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 0.45rem 1.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--middleBlue);
+            color: var(--Darkblue);
+            border-color: var(--Darkblue);
+            transform: translateY(-2px);
+        }
+
+        /* ── PAGES ── */
+        .page { display: block; animation: fadeIn 0.35s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-page-inner {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: none;
+            border: 2px solid var(--ligthBlue);
+            color: var(--Darkblue);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.4rem 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: background 0.15s;
+        }
+
+        .back-btn:hover { background: var(--ligthBlue); }
+
+        .product-full {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .product-full-img {
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+
+        .product-full-img img.main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+            /* start of goffy town */
+
+        .mobile-gallery {
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+
+        .mobile-gallery .main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mobile-product-thumbs {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            display: flex;
+            gap: 8px;
+            background: rgba(255,255,255,0.85);
+            padding: 6px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .mobile-product-thumbs img {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.12s, border-color 0.12s;
+            display: block;
+        }
+
+        .mobile-product-thumbs img:hover { transform: translateY(-3px); }
+        .mobile-product-thumbs img.active { border-color: var(--ligthComplement); transform: translateY(-3px); }
+
+        .mobile-gallery svg { width: 55%; height: 55%; }
+
+        /* end of goofy town */
+
+        .product-thumbs {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            display: flex;
+            gap: 8px;
+            background: rgba(255,255,255,0.85);
+            padding: 6px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .product-thumbs img {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.12s, border-color 0.12s;
+            display: block;
+        }
+
+        .product-thumbs img:hover { transform: translateY(-3px); }
+        .product-thumbs img.active { border-color: var(--ligthComplement); transform: translateY(-3px); }
+
+        .product-full-img svg { width: 55%; height: 55%; }
+
+        .product-full-info h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            color: var(--Darkblue);
+            line-height: 1.2;
+        }
+
+        .product-full-info h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2rem;
+            color: var(--Darkblue);
+            line-height: 2;
+            padding: 0.8rem 0 0;
+        }
+
+        .product-full-info .product-tag { margin-top: 0.5rem; }
+
+        .product-price {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: var(--coral);
+            margin: 1rem 0;
+        }
+
+        .product-full-info p {
+            color: #4a5a78;
+            line-height: 1.7;
+            font-size: 1.02rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .product-features {
+            margin-top: 0.4rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            color: #3a4a68;
+            font-size: 0.95rem;
+        }
+
+        .product-features li::before {
+            content: '✦';
+            color: var(--ligthComplement);
+            font-size: 0.8rem;
+        }
+
+        .add-cart-btn {
+            margin-top: 2rem;
+            background: linear-gradient(135deg, var(--coral), #ff8e53);
+            color: #fff;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            padding: 0.85rem 2.4rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255,107,107,0.35);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .add-cart-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,107,107,0.4); }
+
+        @media (max-width: 700px) {
+            .nav-logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-buttons {
+                gap: 0.4rem;
+            }
+            
+            .nav-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 630px) {
+            nav {
+                height: auto;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 1.4rem 1rem 1rem;
+            }
+
+            .nav-logo {
+                left: 50%;
+                top: 0.5rem;
+                transform: translateX(-50%);
+                font-size: 1.35rem;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.4rem;
+                transform: translateY(35%);
+            }
+
+            .nav-btn {
+                padding: 0.35rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .product-card { aspect-ratio: auto; flex-direction: column; }
+            .product-img { flex: 0 0 auto; width: 100%; aspect-ratio: 2/1; }
+            .product-full { grid-template-columns: 1fr; }
+
+            .product-full-img { display: none; }
+            .mobile-gallery { display: block; margin-top: 0.8rem; margin-bottom: 1rem;}
+
+            .product-full-info h1 { font-size: 1.6rem; }
+            .product-price { font-size: 1.6rem; margin: 0.5rem 0rem;}
+
+            .product-page-inner { margin: 1rem auto;}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="nav-logo" onclick="window.location.href='https://www.fri-fantasi.dk'">Fri Fantasi</a>
+        <div class="nav-buttons">
+            <button class="nav-btn"     id="btn-home"    onclick="window.location.href='https://www.fri-fantasi.dk'">Startside</button>
+            <button class="nav-btn"     id="btn-about"   onclick="window.location.href='https://www.fri-fantasi.dk/om-os'">Om os</button>
+            <button class="nav-btn"     id="btn-contact" onclick="window.location.href='https://www.fri-fantasi.dk/kontakt'">Kontakt</button>
+        </div>
+    </nav>
+
+    <div class="page" id="page-product">
+        <div class="product-page-inner">
+            <button class="back-btn" onclick="window.location.href='https://www.fri-fantasi.dk'">Tilbage til Startside</button>
+
+            <div class="product-full">
+                <div class="product-full-img">
+                    <img id="mainProductImg" class="main-img" src="assets/Fantasikort-main.jpg" alt="Fantasikort billede">
+                    <div class="product-thumbs" aria-hidden="false">
+                        <img class="thumb active" src="assets/Fantasikort-main-thumb.jpg" data-src="assets/Fantasikort-main.jpg" alt="Fantasikort billede">
+                        <img class="thumb" src="assets/Fantasikort-løft-thumb.jpg" data-src="assets/Fantasikort-løft.jpg" alt="Pige der trækker et Fantasikort">
+                        <img class="thumb" src="assets/Piratkort-pige-thumb.jpg" data-src="assets/Piratkort-pige.jpg" alt="Pige der holder et Fantasikort">
+                        <img class="thumb" src="assets/Fantasikort-græs-thumb.jpg" data-src="assets/Fantasikort-græs.jpg" alt="Fantasikort på græs">
+                    </div>
+                </div>
+
+                <div class="product-full-info">
+                    <h1>Fantasikort</h1>
+                        <!-- <div class="product-tag">⭐ Best Seller · Ages 3+</div> -->
+                    <div class="product-price">899 kr</div>
+
+                    <div class="mobile-gallery" aria-hidden="true">
+                        <img id="mobileMainImg" class="main-img" src="assets/Fantasikort-main.jpg" alt="Fantasikort billede">
+                        <div class="mobile-product-thumbs" aria-hidden="false">
+                            <img class="thumb active" src="assets/Fantasikort-main-thumb.jpg" data-src="assets/Fantasikort-main.jpg" alt="Fantasikort billede">
+                            <img class="thumb" src="assets/Fantasikort-løft-thumb.jpg" data-src="assets/Fantasikort-løft.jpg" alt="Pige der trækker et Fantasikort">
+                            <img class="thumb" src="assets/Piratkort-pige-thumb.jpg" data-src="assets/Piratkort-pige.jpg" alt="Pige der holder et Fantasikort">
+                            <img class="thumb" src="assets/Fantasikort-græs-thumb.jpg" data-src="assets/Fantasikort-græs.jpg" alt="Fantasikort på græs">
+                        </div>
+                    </div>
+                <p>
+                    Fantasikort er et kreativt kortspil til børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg. Med 44 fantasifulde kort, skaber børnene en ny historie og leg hver gang de spiller. Spillet er udviklet til at stimulere børns kreativitet og gøre læring gennem leg både sjovt og udviklende.
+                </p>
+                <p>
+                    Fantasikort passer perfekt til både indendørs og udendørs leg og kan bruges af børn, familier, institutioner og skoler.
+                </p>
+                <h3>Sådan spiller man Fantasikort</h3>
+                <p>I spillet er der fire typer af kort: personkort, tingkort, stedkort og problemkort.</p>
+                <p>
+                    Hvert barn trækker et person- og tingkort. Herefter trækker hele gruppen et sted- og problemkort. 
+                </p>
+                <p>Alle kortene er til, for at starte en leg. Det er derfor ikke vigtigt om rollerne holdes, eller overhovedet bruges. Kortene er blot en hjælp til børnene for at starte en fantasileg.</p>
+                <p>Et typisk spil kan bestå af børnene, der leger sig ind i deres personkort, og forsøger at løse et problem bestemt af problemkortet. Legen kan foregå unikke steder baseret på stedkortet, som altså kan lede til nogle ret interresante situationer. Til at løse problemet, har de nogle redskaber bestemt af tingkortene.</p>
+
+                <p>Hvis legen nogensinde bliver kedelig og børnene ønsker et nyt eventyr, trækkes nye kort!</p>
+                <h3>
+                    Vi lover:
+                </h3>
+                <h4>Kreativ leg med fokus på fantasi</h4>
+                <p>
+                    Fantasikort hjælper børn med at udvikle kreativ tænkning, fantasi og sociale kompetencer gennem rolleleg og samarbejde.
+                </p>
+                <h4>Høj kvalitet og lang holdbarhed</h4>
+                <p>
+                    Kortene er produceret i slidstærke materialer, der er udviklet til mange timers leg både inde og ude. Fantasikort er vandafvisende og kan tåle aktiv brug.
+                </p>
+                <h4>Sikkert legetøj til børn</h4>
+                <p>
+                    Hele sættet er fremstillet af genanvendte træfibre og lever op til gældende EU-standarder og danske sikkerhedskrav.
+                </p>
+                <h4>Uendelige kombinationer og historier</h4>
+                <p>
+                    De 44 spillekort kan kombineres på millioner af måder, hvilket giver børnene nye eventyr og udfordringer hver eneste gang.
+                </p>
+                <h4>Bæredygtigt produceret</h4>
+                <p>
+                    Fantasikort er lavet af genanvendte træfibre og produceret uden plastik,  hverken i kort eller emballage.
+                </p>
+                <h3>Diverse information</h3>
+                <ul class="product-features">
+                    <li>44 kort + 1 regelkort</li>
+                    <li>3 til 8 spillere</li>
+                    <li>Kasse: 17,5 x 8,6 x 12 cm</li>
+                    <li>Kort: 11 x 7 x 0,3 cm</li>
+                </ul>
+                <!--  <button class="add-cart-btn">Køb</button>  -->
+                <br></br>
+                <p>
+                    Skriv til <a href="mailto:hwaiz@proton.me">hwaiz@proton.me</a> for at bestille.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.matches('.product-thumbs img')) {
+        const clicked = e.target;
+        const src = clicked.getAttribute('data-src') || clicked.src;
+        const main = document.getElementById('mainProductImg');
+        if (main) main.src = src;
+        document.querySelectorAll('.product-thumbs img').forEach(i => i.classList.remove('active'));
+        clicked.classList.add('active');
+      } else if (e.target && e.target.matches('.mobile-product-thumbs img')) {
+        const clicked = e.target;
+        const src = clicked.getAttribute('data-src') || clicked.src;
+        const main = document.getElementById('mobileMainImg');
+        if (main) main.src = src;
+        document.querySelectorAll('.mobile-product-thumbs img').forEach(i => i.classList.remove('active'));
+        clicked.classList.add('active');
+      } 
+    });
+  </script>
+
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Fantasikort",
+        "description": "Kreativt kortspil til børn med 44 kort, der styrker fantasi, problemløsning og samarbejde. Vandafvisende og bæredygtigt produceret af genanvendte træfibre.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Fri Fantasi"
+        },
+        "audience": {
+            "@type": "PeopleAudience",
+            "suggestedMinAge": 7,
+            "suggestedMaxAge": 9
+        },
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "minValue": 3,
+            "maxValue": 8
+        },
+        "material": "Genanvendte træfibre",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.fri-fantasi.dk/produkter/Fantasikort",
+            "priceCurrency": "DKK",
+            "price": "899",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+        }
+    }
+  </script>
+</body>
+</html>
