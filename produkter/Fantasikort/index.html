@@ -85,6 +85,7 @@
             cursor: pointer;
             transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
             letter-spacing: 0.5px;
+            text-decoration: none;
         }
 
         .nav-btn:hover, .nav-btn.active {
@@ -123,6 +124,7 @@
             cursor: pointer;
             margin-bottom: 2rem;
             transition: background 0.15s;
+            text-decoration: none;
         }
 
         .back-btn:hover { background: var(--ligthBlue); }
@@ -315,6 +317,7 @@
             .nav-btn {
                 padding: 0.4rem 0.8rem;
                 font-size: 0.95rem;
+                text-decoration: none;
             }
         }
 
@@ -344,6 +347,7 @@
             .nav-btn {
                 padding: 0.35rem 1rem;
                 font-size: 0.95rem;
+                text-decoration: none;
             }
 
             .product-card { aspect-ratio: auto; flex-direction: column; }
@@ -362,17 +366,17 @@
 </head>
 <body>
     <nav>
-        <a class="nav-logo" onclick="window.location.href='https://www.fri-fantasi.dk'">Fri Fantasi</a>
+        <a class="nav-logo" href="/">Fri Fantasi</a>
         <div class="nav-buttons">
-            <button class="nav-btn"     id="btn-home"    onclick="window.location.href='https://www.fri-fantasi.dk'">Startside</button>
-            <button class="nav-btn"     id="btn-about"   onclick="window.location.href='https://www.fri-fantasi.dk/om-os'">Om os</button>
-            <button class="nav-btn"     id="btn-contact" onclick="window.location.href='https://www.fri-fantasi.dk/kontakt'">Kontakt</button>
+            <a href="/" class="nav-btn" id="btn-home">Startside</a>
+            <a href="/om-os" class="nav-btn" id="btn-about">Om os</a>
+            <a href="/kontakt" class="nav-btn" id="btn-contact">Kontakt</a>
         </div>
     </nav>
 
     <div class="page" id="page-product">
         <div class="product-page-inner">
-            <button class="back-btn" onclick="window.location.href='https://www.fri-fantasi.dk'">Tilbage til Startside</button>
+            <a class="back-btn" href="/">Tilbage til Startside</a>
 
             <div class="product-full">
                 <div class="product-full-img">
