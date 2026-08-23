@@ -38,12 +38,12 @@
     }
 
     @font-face {
-            font-family: "Tovari Sans";
-            src: url("/fonts/TovariSans.otf") format("opentype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
+      font-family: "Tovari Sans";
+      src: url("/fonts/TovariSans.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
     body {
       font-family: 'Nunito', sans-serif;
@@ -75,6 +75,13 @@
       letter-spacing: 1px;
       cursor: pointer;
       text-decoration: none;
+      transform: translateY(5%);
+    }
+
+    .nav-logo-img {
+      left: 2rem;
+      aspect-ratio: auto;
+      width: 6rem;
     }
 
     .nav-buttons {
@@ -320,26 +327,30 @@
         flex-direction: column;
         align-items: center;
         gap: 0.6rem;
-        padding: 1.4rem 1rem 1rem;
+        padding: 2.2rem 1rem 1rem;
       }
 
       .nav-logo {
         left: 50%;
-        top: 0.5rem;
+        top: -0.7rem;
         transform: translateX(-50%);
         font-size: 1.35rem;
+      }
+
+      .nav-logo-img {
+        width: 4.5rem;
       }
 
       .nav-buttons {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.4rem;
-        transform: translateY(35%);
+        gap: 0.8rem;
+        transform: translateY(35%) translateX(-2%);
       }
 
       .nav-btn {
         padding: 0.35rem 1rem;
-        font-size: 0.95rem;
+        font-size: 1rem;
         text-decoration: none;
       }
 
@@ -382,7 +393,9 @@
 
   <!-- ── NAVIGATION ── -->
   <nav>
-    <a class="nav-logo" onclick="showPage('home')">Fri Fantasi</a>
+    <a class="nav-logo" href="/">
+            <img class="nav-logo-img" src="/assets\Fri Fantasi Logo transparent 256px.png" alt="Fri Fantasi Logo">
+        </a>
     <div class="nav-buttons">
       <a href="/" class="nav-btn active" id="btn-home">Startside</a>
       <a href="/om-os" class="nav-btn" id="btn-about">Om os</a>
