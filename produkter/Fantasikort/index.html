@@ -15,6 +15,7 @@
     <meta property="og:image" content="https://www.fri-fantasi.dk/produkter/Fantasikort/assets/Fantasikort-main.jpg">
     
     <link rel="canonical" href="https://www.fri-fantasi.dk/produkter/Fantasikort">
+    <link rel="icon" type="image/x-icon" href="/favicons/Fri Fantasi Logo cirkel 256px.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
     <style>
@@ -34,6 +35,14 @@
 
             --topBar: #a1b7f0;
             --background: #fffff0;
+        }
+
+        @font-face {
+            font-family: "Tovari Sans";
+            src: url("/fonts/TovariSans.otf") format("opentype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
         }
 
         body {
@@ -60,12 +69,19 @@
         .nav-logo {
             position: absolute;
             left: 2rem;
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.6rem;
+            font-family: 'Tovari Sans', sans-serif;
+            font-size: 1.9rem;
             color: var(--Darkblue);
             letter-spacing: 1px;
             cursor: pointer;
             text-decoration: none;
+            transform: translateY(5%);
+        }
+
+        .nav-logo-img {
+            left: 2rem;
+            aspect-ratio: auto;
+            width: 6rem;
         }
 
         .nav-buttons {
@@ -153,6 +169,29 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        .description-desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 3rem;
+            row-gap: 0.5rem;
+            
+        }
+
+        .description-desktop p {
+            color: #4a5a78;
+            line-height: 1.7;
+            font-size: 1.02rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .description-desktop h3 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2rem;
+            color: var(--Darkblue);
+            line-height: 2;
+            padding: 0.8rem 0 0;
         }
 
             /* start of goffy town */
@@ -283,8 +322,8 @@
         }
 
         .product-features li::before {
-            content: '✦';
-            color: var(--ligthComplement);
+            content: '•';
+            color: var(--darkBlue);
             font-size: 0.8rem;
         }
 
@@ -305,49 +344,16 @@
 
         .add-cart-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(255,107,107,0.4); }
 
-        @media (max-width: 700px) {
-            .nav-logo {
-                font-size: 1.5rem;
-            }
-
-            .nav-buttons {
-                gap: 0.4rem;
-            }
-            
-            .nav-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.95rem;
-                text-decoration: none;
-            }
-        }
-
-        @media (max-width: 630px) {
-            nav {
-                height: auto;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.6rem;
-                padding: 1.4rem 1rem 1rem;
-            }
-
-            .nav-logo {
-                left: 50%;
-                top: 0.5rem;
-                transform: translateX(-50%);
-                font-size: 1.35rem;
-            }
+        @media (max-width: 690px) {
 
             .nav-buttons {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 0.4rem;
-                transform: translateY(35%);
             }
 
-            .nav-btn {
-                padding: 0.35rem 1rem;
-                font-size: 0.95rem;
-                text-decoration: none;
+            .nav-logo {
+                left: 1rem
             }
 
             .product-card { aspect-ratio: auto; flex-direction: column; }
@@ -361,12 +367,50 @@
             .product-price { font-size: 1.6rem; margin: 0.5rem 0rem;}
 
             .product-page-inner { margin: 1rem auto;}
+
+            .description-desktop {grid-template-columns: 1fr; row-gap: 0rem;}
+        }
+
+        @media (max-width: 530px) {
+            .nav-buttons {
+                gap: 0.4rem;
+            }
+            
+            .nav-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.95rem;
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 470px) {
+            nav {
+                align-items: right;
+                justify-content: right;
+                height: 60px;
+            }
+
+            .nav-buttons {
+                gap: 0.3rem;
+            }
+
+            .nav-btn {
+                padding: 0.5rem 0.7rem;
+                font-size: 0.9rem;
+                text-decoration: none;
+            }
+
+            .nav-logo-img {
+                width: 4rem;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a class="nav-logo" href="/">Fri Fantasi</a>
+        <a class="nav-logo" href="/">
+            <img class="nav-logo-img" src="/assets\Fri Fantasi Logo transparent 256px.png" alt="Fri Fantasi Logo">
+        </a>
         <div class="nav-buttons">
             <a href="/" class="nav-btn" id="btn-home">Startside</a>
             <a href="/om-os" class="nav-btn" id="btn-about">Om os</a>
@@ -392,7 +436,7 @@
                 <div class="product-full-info">
                     <h1>Fantasikort</h1>
                         <!-- <div class="product-tag">⭐ Best Seller · Ages 3+</div> -->
-                    <div class="product-price">899 kr</div>
+                    <div class="product-price">449 kr</div>
 
                     <div class="mobile-gallery" aria-hidden="true">
                         <img id="mobileMainImg" class="main-img" src="assets/Fantasikort-main.jpg" alt="Fantasikort billede">
@@ -403,56 +447,65 @@
                             <img class="thumb" src="assets/Fantasikort-græs-thumb.jpg" data-src="assets/Fantasikort-græs.jpg" alt="Fantasikort på græs">
                         </div>
                     </div>
-                <p>
-                    Fantasikort er et kreativt kortspil til 7-9 årige børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg. Med 44 fantasifulde kort, skaber børnene en ny historie og leg hver gang de spiller. Spillet er udviklet til at stimulere børns kreativitet og gøre læring gennem leg både sjovt og udviklende.
-                </p>
-                <p>
-                    Fantasikort passer perfekt til både indendørs og udendørs leg og kan bruges af børn, familier, institutioner og skoler.
-                </p>
-                <h3>Sådan spiller man Fantasikort</h3>
-                <p>I spillet er der fire typer af kort: personkort, tingkort, stedkort og problemkort.</p>
-                <p>
-                    Hvert barn trækker et person- og tingkort. Herefter trækker hele gruppen et sted- og problemkort. 
-                </p>
-                <p>Alle kortene er til, for at starte en leg. Det er derfor ikke vigtigt om rollerne holdes, eller overhovedet bruges. Kortene er blot en hjælp til børnene for at starte en fantasileg.</p>
-                <p>Et typisk spil kan bestå af børnene, der lever sig ind i deres personkort, og forsøger at løse et problem bestemt af problemkortet. Legen kan foregå unikke steder baseret på stedkortet, som altså kan lede til nogle ret interresante situationer. Til at løse problemet, har de nogle redskaber bestemt af tingkortene.</p>
+                    <p>
+                        Fantasikort er et kreativt kortspil til 7-9 årige børn, der styrker fantasi, problemløsning og samarbejde gennem sjov leg. Med 50 fantasifulde kort, skaber børnene en ny historie og leg hver gang de spiller. Spillet er udviklet til at stimulere børns kreativitet og gøre læring gennem leg både sjovt og udviklende.
+                    </p>
+                    <p>
+                        Fantasikort passer perfekt til både indendørs og udendørs leg og kan bruges af børn, familier, institutioner og skoler.
+                    </p>
+                </div>
+            </div>
 
-                <p>Hvis legen nogensinde bliver kedelig og børnene ønsker et nyt eventyr, trækkes nye kort!</p>
-                <h3>
-                    Vi lover:
-                </h3>
-                <h4>Kreativ leg med fokus på fantasi</h4>
-                <p>
-                    Fantasikort hjælper børn med at udvikle kreativ tænkning, fantasi og sociale kompetencer gennem rolleleg og samarbejde.
-                </p>
-                <h4>Høj kvalitet og lang holdbarhed</h4>
-                <p>
-                    Kortene er produceret i slidstærke materialer, der er udviklet til mange timers leg både inde og ude. Fantasikort er vandafvisende og kan tåle aktiv brug.
-                </p>
-                <h4>Sikkert legetøj til børn</h4>
-                <p>
-                    Hele sættet er fremstillet af genanvendte træfibre og lever op til gældende EU-standarder og danske sikkerhedskrav.
-                </p>
-                <h4>Uendelige kombinationer og historier</h4>
-                <p>
-                    De 44 spillekort kan kombineres på millioner af måder, hvilket giver børnene nye eventyr og udfordringer hver eneste gang.
-                </p>
-                <h4>Bæredygtigt produceret</h4>
-                <p>
-                    Fantasikort er lavet af genanvendte træfibre, og er produceret i Danmark.
-                </p>
-                <h3>Diverse information</h3>
-                <ul class="product-features">
-                    <li>44 kort + 1 regelkort</li>
-                    <li>3 til 8 spillere</li>
-                    <li>Kasse: 17,5 x 8,6 x 12 cm</li>
-                    <li>Kort: 11 x 7 x 0,3 cm</li>
-                </ul>
-                <!--  <button class="add-cart-btn">Køb</button>  -->
-                <br></br>
-                <p>
-                    Skriv til <a href="mailto:hwaiz@proton.me">hwaiz@proton.me</a> for at bestille.
-                </p>
+            <br></br>
+
+            <div class="description-desktop">
+                <section>
+                    <h3>Sådan spiller man Fantasikort</h3>
+                    <p>I spillet er der fire typer af kort: personkort, tingkort, stedkort og problemkort.</p>
+                    <p>Hvert barn trækker et person- og tingkort. Herefter trækker hele gruppen et sted- og problemkort. </p>
+                    <p>Alle kortene er til, for at starte en leg. Det er derfor ikke vigtigt om rollerne holdes. Kortene er blot en hjælp til børnene for at starte en fantasileg.</p>
+                    <p>Et typisk spil kan bestå af børnene, der lever sig ind i deres personkort, og forsøger at løse et problem bestemt af problemkortet. Legen kan foregå unikke steder baseret på stedkortet, som altså kan lede til nogle ret interresante situationer. Til at løse problemet, har de nogle redskaber bestemt af tingkortene.</p>
+                    <p>Hvis legen nogensinde bliver kedelig og børnene ønsker et nyt eventyr, trækkes nye kort!</p>
+                </section>
+
+                <section>
+                    <h3>Vi lover:</h3>
+                    <h4>Kreativ leg med fokus på fantasi</h4>
+                    <p>
+                        Fantasikort hjælper børn med at udvikle kreativ tænkning, fantasi og sociale kompetencer gennem rolleleg og samarbejde.
+                    </p>
+                    <h4>Høj kvalitet og lang holdbarhed</h4>
+                    <p>
+                        Kortene er produceret i slidstærke materialer, der er udviklet til mange timers leg både inde og ude. Fantasikort er vandafvisende og kan tåle aktiv brug.
+                    </p>
+                    <h4>Sikkert legetøj til børn</h4>
+                    <p>
+                        Hele sættet er fremstillet af genanvendte træfibre og lever op til gældende EU-standarder og danske sikkerhedskrav.
+                    </p>
+                    <h4>Uendelige kombinationer og historier</h4>
+                    <p>
+                        De 50 spillekort kan kombineres på millioner af måder, hvilket giver børnene nye eventyr og udfordringer hver eneste gang.
+                    </p>
+                    <h4>Bæredygtigt produceret</h4>
+                    <p>
+                        Fantasikort er lavet af genanvendte træfibre, og er håndlavet i Danmark.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Specifikationer</h3>
+                    <ul class="product-features">
+                        <li>50 kort + 1 regelkort</li>
+                        <li>3 til 8 spillere</li>
+                        <li>Kasse: 19,2 x 8,5 x 12 cm</li>
+                        <li>Kort: 11 x 7 x 0,3 cm</li>
+                    </ul>
+                    <!--  <button class="add-cart-btn">Køb</button>  -->
+                    <br></br>
+                    <p>
+                        Skriv til <a href="mailto:hwaiz@proton.me">hwaiz@proton.me</a> for at bestille.
+                    </p>
+                </section>
             </div>
         </div>
     </div>
@@ -482,7 +535,7 @@
         "@context": "https://schema.org/",
         "@type": "Product",
         "name": "Fantasikort",
-        "description": "Kreativt kortspil til børn med 44 kort, der styrker fantasi, problemløsning og samarbejde. Vandafvisende og bæredygtigt produceret af genanvendte træfibre.",
+        "description": "Kreativt kortspil til børn med 50 kort, der styrker fantasi, problemløsning og samarbejde. Vandafvisende og bæredygtigt produceret af genanvendte træfibre.",
         "brand": {
             "@type": "Brand",
             "name": "Fri Fantasi"
@@ -502,7 +555,7 @@
             "@type": "Offer",
             "url": "https://www.fri-fantasi.dk/produkter/Fantasikort",
             "priceCurrency": "DKK",
-            "price": "899",
+            "price": "449",
             "availability": "https://schema.org/InStock",
             "itemCondition": "https://schema.org/NewCondition"
         }

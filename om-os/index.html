@@ -15,6 +15,7 @@
     <meta property="og:image" content="https://www.fri-fantasi.dk/assets/Fri-fantasi-hero.jpg">
     
     <link rel="canonical" href="https://www.fri-fantasi.dk/om-os">
+    <link rel="icon" type="image/x-icon" href="/favicons/Fri Fantasi Logo cirkel 256px.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
     <style>
@@ -34,6 +35,14 @@
 
             --topBar: #a1b7f0;
             --background: #fffff0;
+        }
+
+        @font-face {
+            font-family: "Tovari Sans";
+            src: url("/fonts/TovariSans.otf") format("opentype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
         }
 
         body {
@@ -60,12 +69,19 @@
         .nav-logo {
             position: absolute;
             left: 2rem;
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.6rem;
+            font-family: 'Tovari Sans', sans-serif;
+            font-size: 1.9rem;
             color: var(--Darkblue);
             letter-spacing: 1px;
             cursor: pointer;
             text-decoration: none;
+            transform: translateY(5%);
+        }
+
+        .nav-logo-img {
+            left: 2rem;
+            aspect-ratio: auto;
+            width: 6rem;
         }
 
         .nav-buttons {
@@ -97,6 +113,33 @@
 
         /* ── PAGES ── */
         .page { display: block; animation: fadeIn 0.35s ease; }
+
+        .medarbejdere {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .medarbejdere section {
+            text-align: center;
+        }
+
+        .medarbejdere img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .medarbejdere h3 {
+            margin: 1rem 0 0.3rem;
+        }
+
+        .about-inner .medarbejdere p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.85rem;
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
@@ -131,11 +174,38 @@
             margin-bottom: 1.2rem;
         }
 
-        @media (max-width: 700px) {
-            .nav-logo {
-                font-size: 1.5rem;
+        @media (max-width: 690px) {
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.4rem;
             }
 
+            .nav-logo {
+                left: 1rem
+            }
+
+            .product-card { aspect-ratio: auto; flex-direction: column; }
+            .product-img { flex: 0 0 auto; width: 100%; aspect-ratio: 2/1; }
+            .product-full { grid-template-columns: 1fr; }
+
+            .product-full-img { display: none; }
+            .mobile-gallery { display: block; margin-top: 0.8rem; margin-bottom: 1rem;}
+
+            .product-full-info h1 { font-size: 1.6rem; }
+            .product-price { font-size: 1.6rem; margin: 0.5rem 0rem;}
+
+            .product-page-inner { margin: 1rem auto;}
+
+            .description-desktop {grid-template-columns: 1fr; row-gap: 0rem;}
+
+            .medarbejdere {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 530px) {
             .nav-buttons {
                 gap: 0.4rem;
             }
@@ -147,40 +217,34 @@
             }
         }
 
-        @media (max-width: 630px) {
+        @media (max-width: 470px) {
             nav {
-                height: auto;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.6rem;
-                padding: 1.4rem 1rem 1rem;
-            }
-
-            .nav-logo {
-                left: 50%;
-                top: 0.5rem;
-                transform: translateX(-50%);
-                font-size: 1.35rem;
+                align-items: right;
+                justify-content: right;
+                height: 60px;
             }
 
             .nav-buttons {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.4rem;
-                transform: translateY(35%);
+                gap: 0.3rem;
             }
 
             .nav-btn {
-                padding: 0.35rem 1rem;
-                font-size: 0.95rem;
+                padding: 0.5rem 0.7rem;
+                font-size: 0.9rem;
                 text-decoration: none;
+            }
+
+            .nav-logo-img {
+                width: 4rem;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a class="nav-logo" href="/">Fri Fantasi</a>
+        <a class="nav-logo" href="/">
+            <img class="nav-logo-img" src="/assets\Fri Fantasi Logo transparent 256px.png" alt="Fri Fantasi Logo">
+        </a>
         <div class="nav-buttons">
             <a href="/" class="nav-btn" id="btn-home">Startside</a>
             <a href="/om-os" class="nav-btn active" id="btn-about">Om os</a>
@@ -204,9 +268,32 @@
                 Bæredygtighed er desuden også vigtigt for os, og vi stræder for at producere det mest bæredygtige produkt som mulig med høj kvalitet.
             </p>
 
+            <h3>Fri Fantasi teamet</h2>
+
+            <div class="medarbejdere">
+                <section>
+                    <h3>Jacob</h3>
+                    <p>Design og produktion</p>
+                </section>
+                <section>
+                    <h3>Isabella</h3>
+                    <p>Kommunikation og salg</p>
+                </section>
+                <section>
+                    <h3>Rasmus</h3>
+                    <p>Produktion og finans</p>
+                </section>
+                <section>
+                    <h3>Valdemar</h3>
+                    <p>Kommunikation og salg</p>
+                </section>
+            </div>
+
+            <br></br>
+
             <h3>Styttet af Fonden for Entreprenørskab </h3>
             <p>
-                Vi har modtaget financiel støtte fra <a href="https://ffefonden.dk/">Fonden for Entreprenørskab </a>.
+                Vi har modtaget financiel støtte fra <a href="https://ffefonden.dk/" target="_blank">Fonden for Entreprenørskab </a>.
             </p>
             <img src="assets\Fonden for Entreprenørskab logo.png" alt="Fonden for Entreprenørskab  logo" border="1px solid #000000">
         </div>
