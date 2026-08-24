@@ -75,6 +75,13 @@
             letter-spacing: 1px;
             cursor: pointer;
             text-decoration: none;
+            transform: translateY(5%);
+        }
+
+        .nav-logo-img {
+            left: 2rem;
+            aspect-ratio: auto;
+            width: 6rem;
         }
 
         .nav-buttons {
@@ -168,11 +175,20 @@
             margin-bottom: 1.2rem;
         }
 
-        @media (max-width: 700px) {
-            .nav-logo {
-                font-size: 1.5rem;
+        @media (max-width: 690px) {
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.4rem;
             }
 
+            .nav-logo {
+                left: 1rem
+            }
+        }
+
+        @media (max-width: 530px) {
             .nav-buttons {
                 gap: 0.4rem;
             }
@@ -184,33 +200,25 @@
             }
         }
 
-        @media (max-width: 630px) {
+        @media (max-width: 470px) {
             nav {
-                height: auto;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.6rem;
-                padding: 1.4rem 1rem 1rem;
-            }
-
-            .nav-logo {
-                left: 50%;
-                top: 0.5rem;
-                transform: translateX(-50%);
-                font-size: 1.35rem;
+                align-items: right;
+                justify-content: right;
+                height: 60px;
             }
 
             .nav-buttons {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.4rem;
-                transform: translateY(35%);
+                gap: 0.3rem;
             }
 
             .nav-btn {
-                padding: 0.35rem 1rem;
-                font-size: 0.95rem;
+                padding: 0.5rem 0.7rem;
+                font-size: 0.9rem;
                 text-decoration: none;
+            }
+
+            .nav-logo-img {
+                width: 4rem;
             }
         }
 
@@ -218,7 +226,9 @@
 </head>
 <body>
     <nav>
-        <a class="nav-logo" href="/">Fri Fantasi</a>
+        <a class="nav-logo" href="/">
+            <img class="nav-logo-img" src="/assets\Fri Fantasi Logo transparent 256px.png" alt="Fri Fantasi Logo">
+        </a>
         <div class="nav-buttons">
             <a href="/" class="nav-btn" id="btn-home">Startside</a>
             <a href="/om-os" class="nav-btn" id="btn-about">Om os</a>
