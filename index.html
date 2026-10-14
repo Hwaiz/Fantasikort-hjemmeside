@@ -293,6 +293,72 @@
       color: var(--coral);
     }
 
+    /* social media */
+    .SOME-section {
+      max-width: 1100px;
+      margin: 3.5rem auto 2.5rem;
+      padding: 0 2rem;
+    }
+
+    .SOME-section h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.2rem;
+      color: var(--Darkblue);
+      margin-bottom: 0.3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .SOME-grid {
+      margin-top: 2rem;
+      display: grid;
+      flex-direction: column;
+      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .SOME-card {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 28px var(--shadow);
+      display: flex;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      border: 2px solid transparent;
+      transform: translateZ(0);
+    }
+
+    .SOME-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 16px 40px rgba(26,44,82,0.18);
+      border-color: var(--ligthBlue);
+    }
+
+    .SOME-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .SOME-source {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20%;
+    }
+
     /* Copyright */
     .copyright {
       text-align: center;
@@ -367,6 +433,8 @@
       .products-grid { gap: 1rem; }
 
       .hero { aspect-ratio: 5/3; }
+
+      .SOME-grid { grid-template-columns: 1fr 1fr; }
     }
 
     /*===============================
@@ -434,6 +502,41 @@
           </div>
         </a>
 
+      </div>
+    </div>
+
+    <div class="products-section">
+      <span id="SOME-anchor"></span>
+      <h2>Følg med i hvad der sker!</h2>
+      <div class="SOME-grid">
+
+        <!-- SOME card -->
+         <a class="SOME-card" href="https://www.instagram.com/p/DeJv0ZcCepF/?img_index=1" target="_blank">
+          <img
+            class="SOME-image"
+            src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/838966251_18122267275806201_2973981929757687112_n.webp?_nc_cat=103&ig_cache_key=NDAwMTk0MDAyMzY0MjgzODMxMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=NJAXwZTdVXUQ7kNvwFve5_u&_nc_oc=AdpJelNov6Te5CJHeGCH8leJxnAXFqyU54QSmWTB5_rD64mqn-a-n3fshSnDE-u_xxI&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=cQuka4jwPdoKgbae6bNe5w&_nc_ss=7b6a8&oh=00_AQOmNXQZKleyTMP42I8I6F_iE6Zj_ogCFLFxz6QzzyC5Cw&oe=6AD57445"
+            alt="Fantasikort er et kortspil designet til at hjælpe børn i gang med at lege fantasilege så let som overhovedet muligt."
+          >
+          <img
+            class="SOME-source"
+            src="/assets/insta-logo.svg"
+            alt="Intagram logo"
+            >
+         </a>
+         <!--
+         <a class="SOME-card" href="https://www.instagram.com/p/DeJv0ZcCepF/?img_index=1">
+          <img
+            class="SOME-image"
+            src="https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/838966251_18122267275806201_2973981929757687112_n.webp?_nc_cat=103&ig_cache_key=NDAwMTk0MDAyMzY0MjgzODMxMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=NJAXwZTdVXUQ7kNvwFve5_u&_nc_oc=AdpJelNov6Te5CJHeGCH8leJxnAXFqyU54QSmWTB5_rD64mqn-a-n3fshSnDE-u_xxI&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=cQuka4jwPdoKgbae6bNe5w&_nc_ss=7b6a8&oh=00_AQOmNXQZKleyTMP42I8I6F_iE6Zj_ogCFLFxz6QzzyC5Cw&oe=6AD57445"
+            alt="Fantasikort er et kortspil designet til at hjælpe børn i gang med at lege fantasilege så let som overhovedet muligt."
+          >
+          <img
+            class="SOME-source"
+            src="/assets/facebook logo.svg"
+            alt="Facebook logo"
+            >
+         </a>
+        -->
       </div>
     </div>
     <div class="copyright">
